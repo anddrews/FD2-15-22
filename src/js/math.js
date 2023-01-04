@@ -17,6 +17,23 @@ boo = boo + 10;
 
 const str = 'Hello' + ' ' + 'world';
 
-Math
 console.log(num + num2);
+
+Math.pow(2, 3) // 2 ** 3
+Math.sqrt(2) // 2 ** 3
+
+const rnd = Math.random();
+
+console.log(rnd);
+console.log(Math.ceil(rnd));
+console.log(Math.floor(rnd));
+console.log(Math.round(rnd));
+console.log(Math.trunc(rnd));
+console.log(rnd.toFixed(2));
+
+
+console.log(Number(' -  123   '))
+console.log(Number.parseInt('1.23'))
+console.log(Number.parseFloat('1.23'))
+console.log(Number.parseInt('16', 16))
 

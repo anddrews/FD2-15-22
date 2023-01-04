@@ -1,6 +1,8 @@
 function createCounter() {
     let count = 0;
-
+    const greeting = 'Hello world';
+    console.log(greeting);
+    
     return function() {
         console.log(++count);
     }
