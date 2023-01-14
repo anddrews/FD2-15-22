@@ -1,15 +1,11 @@
-import { Calculator } from "./modules/calculator.js";
+import { numMapEn, numMapRu } from "./modules/dictionary.js";
+const num = 4677767;
 
+function numToString(num, numMap) { 
+  return num
+  .toString()
+  .split('')
+  .reduce((acc, el, index) => index === 0 ? numMap[el] : `${acc} ${numMap[el]}`, '');
+}
 
-const calculator = new Calculator();
-
-console.log(calculator.setSign('1'));
-console.log(calculator.setSign('2'));
-console.log(calculator.setSign('3'));
-console.log(calculator.setSign('sdd'));
-console.log(calculator.setSign('dd'));
-console.log(calculator.setSign('+'));
-console.log(calculator.setSign('-'));
-console.log(calculator.setSign('*'));
-console.log(calculator.setSign('+'));
-console.log(calculator.setSign('1'));
+console.log(numToString(num, numMapRu));
