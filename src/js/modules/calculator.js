@@ -27,10 +27,32 @@ export class Calculator {
             return this.getCurrentString();
         }
 
+        return this.getCurrentString();
+
 
     }
 
     getCurrentString() {
         return `${this.#firstNumber} ${this.#action} ${this.#secondNumber}`;
+    }
+
+    calculate() {
+        const leftOperand = +this.#firstNumber;
+        const rightOperand = +this.#secondNumber;
+        
+        const actions = {
+            '+': (a, b) => a + b,
+            '-': (a, b) => a - b,
+            '*': (a, b) => a * b,
+            '/': (a, b) => a / b,
+        }
+
+        const result = actions[this.#action](leftOperand, rightOperand);
+
+        this.#firstNumber = result.toString();
+        this.#secondNumber = '';
+        this.#action = '';
+
+        return result;
     }
 }
