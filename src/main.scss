@@ -3,3 +3,16 @@
     color: red;
   }
 }
+
+.button:after {
+  content: 'after';
+  background-color: #fff;
+}
+
+.textarea {
+  height: 1000px;
+}
+
+.boo {
+  background-color: rgb(229, 151, 151);
+}
