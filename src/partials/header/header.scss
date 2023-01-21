@@ -1,0 +1,17 @@
+.header {
+    color: rgb(94, 22, 211);
+    font-size: 35px;
+    font-weight: bold;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 30%;
+        max-width: 150px;
+        display: block;
+        border-top: 4px solid rgb(207, 19, 19);
+    }
+}
