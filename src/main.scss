@@ -1,4 +1,5 @@
 @import "./partials/header/header.scss";
+@import "./partials/card/card.scss";
 
 .item {
   border: 1px solid #000;
@@ -17,4 +18,11 @@
 }
 .item4 {
   background-color: rgb(168, 187, 61);
+}
+
+.yoda {
+  width: 100vw;
+  height: 50vh;
+  background-image: url("/img/yoda.jpg");
+  background-size: contain;
 }

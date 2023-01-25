@@ -62,11 +62,44 @@ header.style.color = '#fff';
 
 function getCard({name, imgPath, price, count}) {
   const card = document.createElement('div');
-  card.innerHTML = `Hello ${name}`;
-
+  card.classList.add('card');
+  const img = document.createElement('img');
+  img.src = imgPath;
+  img.classList.add('card__img');
+  card.appendChild(img);
+  const footer = document.createElement('div');
+  footer.classList.add('card__footer');
+  const priceEl = document.createElement('div');
+  priceEl.classList.add('card__price');
+  priceEl.innerText = price;
+  const countEl = document.createElement('div');
+  countEl.classList.add('card__count');
+  countEl.innerText = count;
+  const nameEl = document.createElement('div');
+  nameEl.classList.add('card__name');
+  nameEl.innerText = name;
+  const inputEl = document.createElement('input');
+  inputEl.type = 'number';
+  inputEl.value = 2;
+  inputEl.name = 'input-bbbb';
+  inputEl.addEventListener('change', ({target: {value}}) => console.log(value))
+  footer.append(priceEl, countEl, inputEl);
+  card.appendChild(nameEl);
+  card.appendChild(footer);
   return card;
 }
 
-const card = getCard({name: 'Anddrews'});
+const card = getCard({
+  name: "Anddrews",
+  imgPath: "/img/yoda.jpg",
+  price: "100$",
+  count: "20"
+});
+const card1 = getCard({
+  name: "Andzdfsdfdrews",
+  imgPath: "/img/yoda.jpg",
+  price: "100$",
+  count: "20"
+});
 
-document.body.appendChild(card);
+document.body.append(card, card1);
