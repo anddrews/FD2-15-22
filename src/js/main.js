@@ -60,12 +60,18 @@ const header = document.querySelector('.item4 .header');
 
 header.style.color = '#fff';
 
+function getElement(tag, innerText, attributes) {
+  const el = document.createElement(tag);
+  Object.keys(attributes).forEach(attribute => {
+    el[attribute] = attributes[attribute]
+  })
+  el.innerText = innerText || '';
+  
+  return el
+}
 function getCard({name, imgPath, price, count}) {
-  const card = document.createElement('div');
-  card.classList.add('card');
-  const img = document.createElement('img');
-  img.src = imgPath;
-  img.classList.add('card__img');
+  const card = getElement('div','' , {className: 'card'} );
+  const img = getElement('img', '', {src: imgPath, className: 'card__img'} );
   card.appendChild(img);
   const footer = document.createElement('div');
   footer.classList.add('card__footer');
