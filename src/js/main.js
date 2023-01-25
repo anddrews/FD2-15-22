@@ -1,11 +1,8 @@
-import { numMapEn, numMapRu } from "./modules/dictionary.js";
-const num = 4677767;
+const url = "ftp://devbg.org/forum/index.php";
 
-function numToString(num, numMap) { 
-  return num
-  .toString()
-  .split('')
-  .reduce((acc, el, index) => index === 0 ? numMap[el] : `${acc} ${numMap[el]}`, '');
-}
+const regexp = /^(https?|ftp):\/\/([^/]+)\/([^/]+\/?)+/;
 
-console.log(numToString(num, numMapRu));
+console.log(url.match(regexp));
+
+
+

@@ -1,4 +1,4 @@
-const numMapEn = {
+export const numMapEn = {
     1: 'one',
     2: 'two',
     3: 'three',
@@ -11,20 +11,27 @@ const numMapEn = {
     0: 'zero'
   }
 
-  const numMapRu = {
-    1: 'один',
-    2: 'два',
-    3: 'три',
-    4: 'четыре',
-    5: 'пять',
-    6: 'шесть',
-    7: 'семь',
-    8: 'восемь',
-    9: 'девять',
-    0: 'ноль'
-  }
+export const numMapRu = {
+  1: 'один',
+  2: 'два',
+  3: 'три',
+  4: 'четыре',
+  5: 'пять',
+  6: 'шесть',
+  7: 'семь',
+  8: 'восемь',
+  9: 'девять',
+  0: 'ноль'
+}
 
-  export {
-    numMapEn,
-    numMapRu
-  }
+export const smth = () => {
+  console.log('smth');
+}
+
+export default smth;
+
+// export {
+//   numMapEn,
+//   numMapRu,
+//   smth
+// }
