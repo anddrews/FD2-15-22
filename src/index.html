@@ -11,32 +11,7 @@
 </head>
 
 <body>
-  @@include('./partials/header/_header.html', {
-    "text": "Hello world",
-    "bgImg": "./img/test.jpg",
-    "test": "skdjfhl"
-  })
-  <div class="root"></div>
-  @@include('./partials/card/_card.html', {
-    "name": "Some name",
-    "imgPath": "/img/yoda.jpg",
-    "price": "100$",
-    "count": "20"
-  })
-  <img src="/img/yoda.jpg">
-  <div class="yoda"></div>
-  <a href="http://google.com" target="_blank">Go to google</a>
-  <div class="item item1">
-    <div class="item item2">
-      <div class="item item3">
-        <div class="item item4">
-          @@include('./partials/header/_header.html', {
-            "text": "Item4"
-          })
-        </div>
-      </div>
-    </div>
-  </div>
+  <div id="root"></div>
 </body>
 
 </html>
