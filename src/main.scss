@@ -1,6 +1,9 @@
 @import "./partials/header/header.scss";
 @import "./partials/card/card.scss";
 
+body {
+  margin: 0;
+}
 .item {
   border: 1px solid #000;
   padding: 20px;
@@ -25,4 +28,10 @@
   height: 50vh;
   background-image: url("/img/yoda.jpg");
   background-size: contain;
+}
+
+.canvas {
+  width: 80vw;
+  height: 80vh;
+  transition: 2s linear;
 }
