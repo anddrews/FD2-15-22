@@ -15,7 +15,7 @@ class Controller {
     }
 
     #handleClick(e) {
-        if (e.target === this.#view.getActionsRef()) {
+        if (e.target.tagName !== 'BUTTON') {
             return;
         }
         const {target: {innerText}} = e;

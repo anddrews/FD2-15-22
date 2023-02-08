@@ -9,7 +9,7 @@ const view = new View(buttons, root);
 const calculator = new Calculator();
 const controller = new Controller(calculator, view);
 
-// controller.initialize();
+controller.initialize();
 
 
 const obj = {
