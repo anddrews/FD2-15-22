@@ -1,3 +1,17 @@
-@import "./partials/button/button.scss";
-@import "./partials/display/display.scss";
-@import "./partials/calculator/calculator.scss";
+.banner {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #13d34d;
+    background-color: #95d4a8;
+    border-radius: 20px;
+    padding: 50px;
+    font-size: bold;
+    color: #0e11ce;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
