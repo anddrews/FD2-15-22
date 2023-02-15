@@ -1,17 +1,33 @@
-.banner {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 1px solid #13d34d;
-    background-color: #95d4a8;
-    border-radius: 20px;
-    padding: 50px;
-    font-size: bold;
-    color: #0e11ce;
-    display: none;
+.container {
+    max-width: 80vw;
+    margin: auto;
+    border: 1px solid lightgray;
+    text-align: center;
 
-    &.active {
-        display: block;
+    > div:nth-child(2n + 1) {
+        background-color: lightgray;
+    }
+
+    &__row,
+    &__row--header {
+        display: flex;
+    }
+
+    &__row--header {
+        justify-content: space-between;
+        border: 2px solid black;
+        margin-top: 20px;
+        
+        .container__column {
+            font-weight: bold;
+            font-size: 24px;
+            padding: 20px;
+        }
+    }
+
+    &__column {
+        padding: 5px 20px;
+        border: 1px solid black;
+        width: 33%;
     }
 }
