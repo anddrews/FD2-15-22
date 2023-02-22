@@ -11,10 +11,10 @@
 </head>
 
 <body>
-  <div class="container">
-    <header class="container__header">
-      Список товаров
-    </header>
+    <div class="container">
+      <header class="container__header">
+        Список товаров
+      </header>
       <div class="container__row--header">
         <div class="container__column">
           Name
@@ -26,8 +26,22 @@
           Actions
         </div>
       </div>
+      <div class="container__items">
+        
+      </div>
     </div>
   </div>
+  <form id="addItem" class="add-item" test-my-attributes="test">
+    <label>
+      Name
+      <input type="text" name="name">
+    </label>
+    <label>
+      Price
+      <input type="text" name="price">
+    </label>
+    <button >Submit</button>
+  </form>
 </body>
 
 </html>

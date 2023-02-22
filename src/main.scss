@@ -4,9 +4,7 @@
     border: 1px solid lightgray;
     text-align: center;
 
-    > div:nth-child(2n + 1) {
-        background-color: lightgray;
-    }
+    
 
     &__row,
     &__row--header {
@@ -30,4 +28,22 @@
         border: 1px solid black;
         width: 33%;
     }
+
+    &__items {
+        max-height: 200px;
+        overflow-y: auto;
+
+        > div:nth-child(2n + 1) {
+            background-color: lightgray;
+        }
+    }
+}
+
+.add-item {
+    margin: 50px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    row-gap: 20px;
 }
