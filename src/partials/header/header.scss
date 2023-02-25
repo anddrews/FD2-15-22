@@ -1,0 +1,11 @@
+ .header {
+    background: rgb(228, 217, 217);
+    --main-color: #adcd35;
+
+    &__actions {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 25px;
+        background-color: var(--main-color);
+    }
+ }

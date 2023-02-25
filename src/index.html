@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./main.scss">
   <link href="./fonts/BebasNeue-Regular.ttf">
   <title>First project</title>
@@ -11,37 +14,25 @@
 </head>
 
 <body>
-    <div class="container">
-      <header class="container__header">
-        Список товаров
-      </header>
-      <div class="container__row--header">
-        <div class="container__column">
-          Name
-        </div>
-        <div class="container__column">
-          Price
-        </div>
-        <div class="container__column">
-          Actions
-        </div>
-      </div>
-      <div class="container__items">
-        
-      </div>
+     @@include('./partials/header/_header.html')
+    <div class="main-menu">
+      <p class="text text--xs">
+        Text xs
+      </p>
+      <p class="text text--s hint" data-text="Some explanation">
+        Text s
+      </p>
+      <p class="text text--s text--bold">
+        Text s
+      </p>
     </div>
-  </div>
-  <form id="addItem" class="add-item" test-my-attributes="test">
-    <label>
-      Name
-      <input type="text" name="name">
-    </label>
-    <label>
-      Price
-      <input type="text" name="price">
-    </label>
-    <button >Submit</button>
-  </form>
+    <section>
+      First
+    </section>
+    <section class="bg-gray">
+      Second
+      Second
+    </section>
 </body>
 
 </html>
