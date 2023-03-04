@@ -1,35 +1,5 @@
+@import "./partials/auth/auth.scss";
+
 body {
     margin: 0;
-}
-
-.container {
-    max-height: 100vh;
-}
-
-.header {
-    padding: 20px;
-    background-color: tomato;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    
-    &.active {
-        background-color: #271aa1;
-    }
-}
-
-.content {
-    overflow: auto;
-
-    &__inner {
-        height: 300vh;
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-.item {
-    margin: auto;
-    padding: 10px;
-    background-color: #2ac95a;
 }
