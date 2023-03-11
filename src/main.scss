@@ -1,5 +1,11 @@
 @import "./partials/auth/auth.scss";
-
+@import "./partials/backet/backet.scss";
 body {
     margin: 0;
+}
+
+.header {
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
 }

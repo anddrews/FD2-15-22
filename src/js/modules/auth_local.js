@@ -58,6 +58,11 @@ const logout = () => {
 };
 const getUser = () => {
     return new Promise((res) => {
+        const user = JSON.parse(localStorage.getItem('currentUser'));
+
+        if (user) {
+            currentUser = user;
+        }
         res(currentUser);
     })
  };

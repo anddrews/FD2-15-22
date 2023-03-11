@@ -4,7 +4,8 @@ import {
     login,
     logout,
     getUser,
-} from './modules/auth_local.js';
+} from './modules/auth_firebase.js';
+import {setCount, clear} from './modules/backet.js';
 
 const CURRENT_USER = 'currentUser';
 
@@ -54,28 +55,51 @@ const loginHandler = (e) => {
     }
 
     login(email.value, password.value)
-    .then((user) => {
-        const loginBtn = document.querySelector('#loginBtn');
-        loginBtn.style.display = 'none';
-        const userName = document.querySelector('#userName');
-        userName.innerText = user.userName;
-        localStorage.setItem(CURRENT_USER, JSON.stringify(user));
-        closeModal();
-    })
-    .catch((e) => {
-        console.log(e)
-    })
+        .then((user) => {
+            const loginBtn = document.querySelector('#loginBtn');
+            loginBtn.style.display = 'none';
+            const userName = document.querySelector('#userName');
+            userName.innerText = user.userName;
+            localStorage.setItem(CURRENT_USER, JSON.stringify(user));
+            closeModal();
+            setCount();
+        })
+        .catch((e) => {
+            console.log(e)
+        })
 }
 
 loginForm.addEventListener('submit', loginHandler);
 
-const currentUser = localStorage.getItem(CURRENT_USER);
+const logoutBtn = document.querySelector('#logoutBtn');
+logoutBtn.addEventListener('click', () => {
+    logout();
+})
 
-if (currentUser) {
-    const loginBtn = document.querySelector('#loginBtn');
-    loginBtn.style.display = 'none';
-    const userName = document.querySelector('#userName');
-    const {userName: name} = JSON.parse(currentUser)
-    userName.innerText = name;
+// getUser().then(currentUser => {
+//     if (currentUser) {
+//         const loginBtn = document.querySelector('#loginBtn');
+//         loginBtn.style.display = 'none';
+//         const userName = document.querySelector('#userName');
+//         const {displayName: name} = currentUser;
+//         userName.innerText = name;
+//         setCount();
+//     }
+
+// })
+
+async function start() {
+    const currentUser = await getUser();
+    
+    if (currentUser) {
+        const loginBtn = document.querySelector('#loginBtn');
+        loginBtn.style.display = 'none';
+        const userName = document.querySelector('#userName');
+        const {displayName: name} = currentUser;
+        userName.innerText = name;
+        setCount();
+    }
 }
+
+start();
 
