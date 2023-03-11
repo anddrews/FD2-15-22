@@ -8,15 +8,6 @@ import {
     updateProfile
 } from 'https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js';
 
-// const firebaseConfig = {
-//     apiKey: "AIzaSyDAKrK7mQp35ZUYoM-ZuG9VmaTluYyOShA",
-//     authDomain: "test-project-9c3ab.firebaseapp.com",
-//     projectId: "test-project-9c3ab",
-//     storageBucket: "test-project-9c3ab.appspot.com",
-//     messagingSenderId: "1087586717022",
-//     appId: "1:1087586717022:web:d3f707be21585c14d3d3cf"
-//   };
-
 const firebaseConfig = {
   apiKey: "AIzaSyC2X72pO_Nh0u93El8rt9SWf5RbFGGKhxA",
   authDomain: "it-academy-auth.firebaseapp.com",
