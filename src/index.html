@@ -21,11 +21,20 @@
     <span id="userName"></span>
     @@include('./partials/backet/_backet.html')
   </header>
+    <div id="root"></div>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, in atque, repellat possimus sint laboriosam eligendi molestias impedit ullam voluptatem, ea sunt. Cum, veritatis corrupti quo illum fuga adipisci voluptates.
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, in atque, repellat possimus sint laboriosam eligendi molestias impedit ullam voluptatem, ea sunt. Cum, veritatis corrupti quo illum fuga adipisci voluptates.
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, in atque, repellat possimus sint laboriosam eligendi molestias impedit ullam voluptatem, ea sunt. Cum, veritatis corrupti quo illum fuga adipisci voluptates.
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, in atque, repellat possimus sint laboriosam eligendi molestias impedit ullam voluptatem, ea sunt. Cum, veritatis corrupti quo illum fuga adipisci voluptates.
     @@include('./partials/auth/_auth.html')
+    @@include('./partials/link/_link.html', {
+      "href": "/backet",
+      "title": "Backet"
+    })
+    @@include('./partials/link/_link.html', {
+      "href": "/user",
+      "title": "User Profile"
+    })
 </body>
 
 </html>

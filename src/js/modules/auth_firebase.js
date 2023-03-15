@@ -7,6 +7,8 @@ import {
     signOut,
     updateProfile
 } from 'https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js';
+import { eventBus } from "./envent_bus.js";
+import { ACTIONS } from "./constants.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyC2X72pO_Nh0u93El8rt9SWf5RbFGGKhxA",
@@ -29,7 +31,9 @@ const createAccount = async (email, password, displayName) => {
 }
 
 const login = (email, password) => signInWithEmailAndPassword(auth, email, password);
-const logout = () => signOut(auth);
+const logout = () => signOut(auth).then(() => {
+    eventBus.dispatch(ACTIONS.logout);
+});
 
 
 const application = async() => {

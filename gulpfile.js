@@ -43,11 +43,12 @@ const serverConfig = {
   server: {
     baseDir: "./dist"
   },
+  single: true,
   tunnel: false,
   host: 'localhost',
   port: 9000,
   logPrefix: "IT-academy",
-  notify: false
+  notify: false,
 };
 
 

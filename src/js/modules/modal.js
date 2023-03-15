@@ -1,3 +1,6 @@
+import { eventBus } from "./envent_bus.js";
+import { ACTIONS } from "./constants.js";
+
 const modal = document.querySelector('.modal');
 const closer = modal.querySelector('.modal__close');
 
@@ -12,6 +15,8 @@ const showModal = () => {
 const closeModal = () => {
     modal.classList.remove('active');
 }
+
+eventBus.subscribe(ACTIONS.login, closeModal);
 
 export {
     showModal,

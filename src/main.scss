@@ -9,3 +9,12 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+#loginBtn,
+#logoutBtn {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
