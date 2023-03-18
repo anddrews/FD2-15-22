@@ -1,36 +1,47 @@
 import { eventBus } from "./envent_bus.js";
 import { ACTIONS } from "./constants.js";
 import { login } from "./auth_firebase.js";
+import { withEmptyValueCheck,
+     withEmailValueCheck,
+} from './validators.js';
+
+const setWarning = (el, warning) => {
+    el.parentElement.classList.add('invalid');
+    el.parentElement.dataset.error = warning;
+}
+
+const emailValidators = [withEmptyValueCheck, withEmailValueCheck];
+const passwordValidators = [withEmptyValueCheck];
+const checkValidity = (validators, value) => validators.reduce((acc, fn) => fn(acc), value)
 
 const loginHandler = (e) => {
     e.preventDefault();
     const {target: {
-        elements: {
-            email,
-            password}}
+        elements
+    }
     } = e;
 
-    if(!email.value) {
-        email.parentElement.classList.add('invalid');
-        email.parentElement.dataset.error = 'Not empty!';
+    const validators = {
+        email: emailValidators,
+        password: passwordValidators
+    }
 
+    let formError = false;
+    
+    Object.keys(validators).forEach(field => {
+        const {error} = checkValidity(validators[field], elements[field].value);
+        
+        if(error) {
+            setWarning(elements[field], error);
+            formError = true;
+        }
+    })
+
+    if(formError) {
         return;
     }
 
-    if(!email.value.match(/[a-z0-9]+@[a-z]+\.\w{2,4}/)) {
-        email.parentElement.classList.add('invalid');
-        email.parentElement.dataset.error = 'Wrong email format!';
-        return;
-    }
-
-    if(!password.value) {
-        password.parentElement.classList.add('invalid');
-        password.parentElement.dataset.error = 'Not empty!';
-
-        return;
-    }
-
-    login(email.value, password.value)
+    login(elements.email.value, elements.password.value)
         .then(({user}) => {
             eventBus.dispatch(ACTIONS.login, user);
         })

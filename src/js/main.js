@@ -50,3 +50,13 @@ async function initialize() {
 
 initialize();
 
+
+// const onBeforeUnload = (e) => {
+//     e.preventDefault();
+//     e.returnValue = "Are you sure?";
+    
+//     return "Are you sure?";
+
+// }
+
+// window.addEventListener('beforeunload', onBeforeUnload);
