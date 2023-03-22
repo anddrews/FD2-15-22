@@ -50,6 +50,36 @@ async function initialize() {
 
 initialize();
 
+function windowEventHandler(e) {
+    this.handlers.forEach(({callback, id, type}) => {
+        if (e.target.id === id && e.type === type) {
+            callback(e)
+        }
+    })
+}
+
+windowEventHandler.register = function(fn, id, type) {
+    if (this.handlers) {
+        this.handlers.push({callback: fn, id, type})
+    } else {
+        this.handlers = [{callback: fn, id, type}]
+    }
+}
+
+
+
+window.addEventListener('click', windowEventHandler.bind(windowEventHandler))
+window.addEventListener('change', windowEventHandler.bind(windowEventHandler))
+
+
+const phoneHandler = (e) => {
+        eventBus.dispatch('phoneChange', {data: 'ddd'})
+        console.log('phopne', e.target.value)
+}
+
+windowEventHandler.register(phoneHandler, 'phone', 'click')
+windowEventHandler.register(() => {console.log('doubleclick')}, 'phone', 'change')
+
 
 // const onBeforeUnload = (e) => {
 //     e.preventDefault();
