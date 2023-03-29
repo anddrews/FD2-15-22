@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.21/css/intlTelInput.css" integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./main.scss">
+  <link rel="stylesheet" href="/css/main.css">
   <link href="./fonts/BebasNeue-Regular.ttf">
   <title>First project</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.21/js/intlTelInput.min.js" integrity="sha512-x1RjK1QHIg0CA4lP7CFG98UXDy04pYBPuepiMd4bkJ7sqEfAPHNmVbkBxVDG3zpnolqMX2cd1mX13HlvwZfA8w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -22,22 +22,62 @@
     <button id="loginBtn">Login</button>
     <button id="logoutBtn">Logout</button>
     <span id="userName"></span>
-    @@include('./partials/backet/_backet.html')
+    <a
+    href="/user/second.html"
+    class="backet"
+  ><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+
   </header>
     <div id="root"></div>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, in atque, repellat possimus sint laboriosam eligendi molestias impedit ullam voluptatem, ea sunt. Cum, veritatis corrupti quo illum fuga adipisci voluptates.
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, in atque, repellat possimus sint laboriosam eligendi molestias impedit ullam voluptatem, ea sunt. Cum, veritatis corrupti quo illum fuga adipisci voluptates.
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, in atque, repellat possimus sint laboriosam eligendi molestias impedit ullam voluptatem, ea sunt. Cum, veritatis corrupti quo illum fuga adipisci voluptates.
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, in atque, repellat possimus sint laboriosam eligendi molestias impedit ullam voluptatem, ea sunt. Cum, veritatis corrupti quo illum fuga adipisci voluptates.
-    @@include('./partials/auth/_auth.html')
-    @@include('./partials/link/_link.html', {
-      "href": "/backet",
-      "title": "Backet"
-    })
-    @@include('./partials/link/_link.html', {
-      "href": "/user",
-      "title": "User Profile"
-    })
+    <div class="modal">
+    <div class="modal__content">
+        <button class="modal__close">X</button>
+        <div class="tabs">
+            <input type="radio" name="tabs" id="tab-1" checked>
+            <input type="radio" name="tabs" id="tab-2">
+            <div class="tabs__items">
+                <label class="tabs__item" for="tab-1">
+                    Login
+                </label>
+                <label class="tabs__item" for="tab-2">
+                    Create Account
+                </label>
+            </div>
+            <form id="login" class="form">
+                <label class="form__field">
+                    E-mail
+                    <input type="text" name="email">
+                </label>
+                <label class="form__field">
+                    Password
+                    <input type="password" name="password">
+                </label>
+                <button>Login</button>
+            </form>
+            <form id="create" class="form">
+                <label class="form__field">
+                    E-mail
+                    <input type="text" name="email">
+                </label>
+                <label class="form__field">
+                    Password
+                    <input type="password" name="password">
+                </label>
+                <label class="form__field">
+                    User Name
+                    <input type="text" name="userName">
+                </label>
+                <button>Create Account</button>
+            </form>
+        </div>    
+    </div>
+</div>
+    <a href="/backet" data-link="internal">Backet</a>
+    <a href="/user" data-link="internal">User Profile</a>
     <a href="/user/second.html">User Info</a>
     <input id="phone"  />
     <input id="sdfsdf"  />
