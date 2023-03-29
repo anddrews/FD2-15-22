@@ -9,6 +9,7 @@ import "./modules/login_form.js";
 import "./modules/backet.js";
 import "./partials/link.js";
 import "./modules/router.js";
+import "./modules/drag_n_drop.js";
 
 const setUserStatus = (user) => {
     const loginBtn = document.querySelector('#loginBtn');

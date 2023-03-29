@@ -6,7 +6,8 @@
   "license": "ISC",
   "scripts": {
     "start": "gulp start",
-    "build": "gulp build"
+    "build": "gulp build",
+    "build:ts": "tsc ./src/js/example.ts"
   },
   "devDependencies": {
     "browser-sync": "^2.26.5",
@@ -18,6 +19,11 @@
     "gulp-plumber": "^1.2.1",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5"
+    "gulp-sourcemaps": "^2.6.5",
+    "tsc": "^2.0.4",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "firebase": "^9.18.0"
   }
 }
